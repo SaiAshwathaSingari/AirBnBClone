@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const {userRoute} = require('./routes/usersRouter')
 const {hostRouter} = require('./routes/hostRouter');
 const {errorHandlingPage} = require('./routes/errorhandlingpage');
+const rootdir = require('./utils/pathUtil');
 const app = express();
 
 
