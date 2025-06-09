@@ -4,6 +4,7 @@ const {userRoute} = require('./routes/usersRouter')
 const {hostRouter} = require('./routes/hostRouter');
 const {errorHandlingPage} = require('./routes/errorhandlingpage');
 const rootdir = require('./utils/pathUtil');
+const path = require('path');
 const app = express();
 
 
@@ -16,7 +17,9 @@ app.use(express.urlencoded());
 
 app.use(userRoute);
 app.use(hostRouter);
+app.use(express.static(path.join(rootdir,'public')));
 app.use(errorHandlingPage);
+
 app.listen(port, ()=>{
   console.log(`Server is running on http://localhost:${port}`);
 })
